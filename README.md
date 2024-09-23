@@ -1,9 +1,8 @@
 # Frontend Mentor - Time tracking dashboard
 
-
 ## Welcome! 👋
 
-This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -18,8 +17,8 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
-
 ## Overview
+
 ### The challenge
 
 Your challenge is to build out this dashboard and get it looking as close to the design as possible.
@@ -56,8 +55,8 @@ Want some support on the challenge? [Join our community](https://www.frontendmen
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Update later](https://your-solution-url.com)
+- Live Site URL: [Time tracking dashboard](https://auri222.github.io/Time-tracking-dashboard-HTML-CSS-JavaScript/)
 
 ## My process
 
@@ -75,13 +74,33 @@ Want some support on the challenge? [Join our community](https://www.frontendmen
 - Loading Json file with import
 - Using for each loop, query selector and function in JavaScript
 
+```html
+<!-- Structure of the activity card -->
+<div class="activity">
+  <div class="activity-img clr--work">
+    <img src="./images/icon-work.svg"
+    alt="Work">
+  </div>
+  <div class="activity-info">
+    <div class="activity-title">
+      <h2>Work</h2>
+      <img src="./images/icon-ellipsis.svg" alt="Three dots icon" />
+    </div>
+    <div class="activity-content">
+      <h3>32hrs</h3>
+      <p>Last Week - 36hrs</p>
+    </div>
+  </div>
+</div>
+```
+
 ```css
 .grid-container {
   max-width: 1100px;
   margin: 1.2rem 1.2rem;
   display: grid;
   gap: 1.2rem;
-  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
 }
 
 .activity-img {
@@ -101,6 +120,7 @@ Want some support on the challenge? [Join our community](https://www.frontendmen
   justify-content: space-between;
 }
 ```
+
 ```js
   // This kind of import is only work on Chrome, Edge and Opera; not work on Firefox
   import data from './data.json' with { type: 'json' }
@@ -109,10 +129,10 @@ Want some support on the challenge? [Join our community](https://www.frontendmen
   var buttons = document.getElementsByClassName('btn')
   let load_data = (data, activity, buttons) => {
   let container = document.querySelector('.grid-container')
-  
+
   let output = ""
   data.forEach((item) => {
-    let timerange = activity == "Daily" ? "Yesterday" : activity == "Weekly" ? "Week" : "Month" 
+    let timerange = activity == "Daily" ? "Yesterday" : activity == "Weekly" ? "Week" : "Month"
     let current = item.timeframes[activity.toLowerCase()]["current"]
     let previous = item.timeframes[activity.toLowerCase()]["previous"]
     let img_color = item.title == "Work" ? "work" : item.title == "Play" ? "play" : item.title == "Study" ? "study" : item.title == "Exercise" ? "exercise" : item.title == "Social" ? "social" : "selfcare"
@@ -152,7 +172,7 @@ let on_change_data = (data, activity, buttons) => {
   let activity_content = document.querySelectorAll('.activity-content')
 
   data.forEach((item, index) => {
-    let timerange = activity == "Daily" ? "Yesterday" : activity == "Weekly" ? "Week" : "Month" 
+    let timerange = activity == "Daily" ? "Yesterday" : activity == "Weekly" ? "Week" : "Month"
     let current = item.timeframes[activity.toLowerCase()]["current"]
     let previous = item.timeframes[activity.toLowerCase()]["previous"]
 
@@ -182,10 +202,10 @@ for(let i = 0; i < buttons.length; i++){
 }
 ```
 
-
 ### Continued development
 
-Build this project using ReactJS.
+- Build this project using ReactJS.
+- Approach the mobile-first flow
 
 ### Useful resources
 
