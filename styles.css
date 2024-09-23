@@ -1,0 +1,326 @@
+:root {
+  --Blue: hsl(246, 80%, 60%);
+  --Very_dark_blue: hsl(226, 43%, 10%);
+  --Dark_blue: hsl(235, 46%, 20%);
+  --Desaturated_blue: hsl(235, 45%, 61%);
+  --Pale_blue: hsl(236, 100%, 87%);
+  --clr_work: hsl(15, 100%, 70%);
+  --clr_play: hsl(195, 74%, 62%);
+  --clr_study: hsl(348, 100%, 68%);
+  --clr_exercise: hsl(145, 58%, 55%);
+  --clr_social: hsl(264, 64%, 52%);
+  --clr_self_care: hsl(43, 84%, 65%);
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 300;
+  src: url('./fonts/Rubik-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 400;
+  src: url('./fonts/Rubik-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rubik';
+  font-weight: 500;
+  src: url('./fonts/Rubik-Medium.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Very_dark_blue);
+  font-family: 'Rubik';
+}
+
+p, h1, h2, h3{
+  color: #fff;
+}
+
+h1, h3, p{
+  font-weight: 300;
+} 
+
+button {
+  outline: none;
+  border: none;
+  background: transparent;
+  font-weight: 400;
+  color: var(--Desaturated_blue);
+  font-size: 1rem;
+}
+
+button:hover, button:focus {
+  color: #fff;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+h3 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+p {
+  font-size: 0.75rem;
+}
+
+.user-info p {
+  color: var(--Pale_blue);
+  font-size: 1rem;
+}
+
+.activity-content p {
+  color: var(--Pale_blue);
+}
+
+.user-info > p, .activity-info > p {
+  font-weight: 300;
+}
+
+.clr--work {
+  background-color: var(--clr_work);
+}
+.clr--play {
+  background-color: var(--clr_play);
+}
+.clr--study {
+  background-color: var(--clr_study);
+}
+.clr--exercise {
+  background-color: var(--clr_exercise);
+}
+.clr--social {
+  background-color: var(--clr_social);
+}
+.clr--selfcare {
+  background-color: var(--clr_self_care);
+}
+
+.clr--txt-active {
+  color: #fff;
+}
+
+.active {
+  color: #fff;
+}
+.active:hover {
+  font-weight: bold !important;
+}
+
+/*End Reusable classes and elements*/
+
+/* Start of custom CSS */
+.grid-container {
+  max-width: 1100px;
+  margin: 1.2rem 1.2rem;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); /* I'm not quite figure this out yet but it works */
+}
+
+.activity {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 55px 45px auto;
+  cursor: pointer;
+}
+
+.activity:hover .activity-info, 
+.activity:focus .activity-info{
+  background: rgb(61, 61, 144);
+} 
+
+.user-box {
+  grid-row: 1 / 3;
+}
+
+.activity-img {
+  grid-row: 1 / 3;
+  grid-column: 1 / 3;
+}
+
+.activity-info {
+  grid-row: 2 / 4;
+  grid-column: 1 / 3;
+  z-index: 1; 
+  background: var(--Dark_blue);
+  border-radius: 1rem;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.activity-img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.activity-img img {
+  display: block;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.activity-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.activity-content h3 {
+  margin-bottom: 0.75rem;
+}
+
+.activity-content p {
+  margin-bottom: 0.5rem;
+}
+
+.user-box {
+  display: grid;
+  background: var(--Dark_blue);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.user-wrapper {
+  background: var(--Blue) !important;
+  padding: 1.5em;
+  border-radius: 1rem;
+}
+
+.user-wrapper img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-bottom: 2rem;
+}
+
+.user-wrapper h1 {
+  margin-bottom: 5rem;
+}
+
+#activities-menu {
+  padding: 1.75em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+#activities-menu li {
+  list-style-type: none;
+  
+}
+
+#activities-menu li a {
+  text-decoration: none;
+
+}
+
+.attribution { 
+  width: 100%;
+  max-width: 1100px;
+  padding: 1rem 0;
+  font-size: 11px; 
+  text-align: center; 
+  color: var(--Pale_blue);
+}
+.attribution a { 
+  text-decoration: none;
+  color: var(--Pale_blue); 
+}
+
+.attribution a:hover,
+.attribution a:focus {
+  font-weight: bold;
+  color: var(--clr_social); 
+}
+
+/* Specific situation that happened on this screen size range*/
+@media screen and (min-width: 805px) and (max-width: 1068px) {
+  /* Select the child next to the last child */
+  .activity:nth-last-child(2) {
+    grid-column: 2;
+  }
+
+  /* Select the last chile */
+  .activity:nth-last-child(-n + 1) {
+    grid-column: 3;
+  }
+  
+}
+
+/* Mobile device less than 768px */
+@media only screen and (max-width: 768px) 
+{
+  .grid-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column
+  }
+
+  .user-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .user-info h1, 
+  .user-wrapper img {
+    margin-bottom: 0;
+  }
+
+  .user-info h1 > br {
+    display: none;
+  }
+
+  #activities-menu {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .activity-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .activity-content h3,  
+  .activity-content p  {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 22.8125em)
+{
+  .user-info h1 > br {
+    display: none;
+  }
+  .activity-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
